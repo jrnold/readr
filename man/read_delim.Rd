@@ -15,17 +15,17 @@ read_delim(file, delim, quote = "\\"", escape_backslash = FALSE,
 
 read_csv(file, col_names = TRUE, col_types = NULL,
   locale = default_locale(), na = c("", "NA"), quoted_na = TRUE,
-  comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
+  quote = "\\"", comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
   guess_max = min(1000, n_max), progress = show_progress())
 
 read_csv2(file, col_names = TRUE, col_types = NULL,
   locale = default_locale(), na = c("", "NA"), quoted_na = TRUE,
-  comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
+  quote = "\\"", comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
   guess_max = min(1000, n_max), progress = show_progress())
 
 read_tsv(file, col_names = TRUE, col_types = NULL,
   locale = default_locale(), na = c("", "NA"), quoted_na = TRUE,
-  comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
+  quote = "\\"", comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,
   guess_max = min(1000, n_max), progress = show_progress())
 }
 \arguments{
@@ -47,7 +47,7 @@ least one new line to be recognised as data (instead of a path).}
 
 \item{escape_backslash}{Does the file use backslashes to escape special
 characters? This is more general than \code{escape_double} as backslashes
-can be used to escape the delimeter character, the quote characer, or
+can be used to escape the delimiter character, the quote character, or
 to add special characters like \code{\\n}.}
 
 \item{escape_double}{Does the file escape quotes by doubling them?

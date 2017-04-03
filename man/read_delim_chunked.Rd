@@ -15,18 +15,18 @@ read_delim_chunked(file, callback, chunk_size = 10000, delim, quote = "\\"",
 
 read_csv_chunked(file, callback, chunk_size = 10000, col_names = TRUE,
   col_types = NULL, locale = default_locale(), na = c("", "NA"),
-  quoted_na = TRUE, comment = "", trim_ws = TRUE, skip = 0,
-  guess_max = min(1000, chunk_size), progress = show_progress())
+  quoted_na = TRUE, quote = "\\"", comment = "", trim_ws = TRUE,
+  skip = 0, guess_max = min(1000, chunk_size), progress = show_progress())
 
 read_csv2_chunked(file, callback, chunk_size = 10000, col_names = TRUE,
   col_types = NULL, locale = default_locale(), na = c("", "NA"),
-  quoted_na = TRUE, comment = "", trim_ws = TRUE, skip = 0,
-  guess_max = min(1000, chunk_size), progress = show_progress())
+  quoted_na = TRUE, quote = "\\"", comment = "", trim_ws = TRUE,
+  skip = 0, guess_max = min(1000, chunk_size), progress = show_progress())
 
 read_tsv_chunked(file, callback, chunk_size = 10000, col_names = TRUE,
   col_types = NULL, locale = default_locale(), na = c("", "NA"),
-  quoted_na = TRUE, comment = "", trim_ws = TRUE, skip = 0,
-  guess_max = min(1000, chunk_size), progress = show_progress())
+  quoted_na = TRUE, quote = "\\"", comment = "", trim_ws = TRUE,
+  skip = 0, guess_max = min(1000, chunk_size), progress = show_progress())
 }
 \arguments{
 \item{file}{Either a path to a file, a connection, or literal data
@@ -51,7 +51,7 @@ least one new line to be recognised as data (instead of a path).}
 
 \item{escape_backslash}{Does the file use backslashes to escape special
 characters? This is more general than \code{escape_double} as backslashes
-can be used to escape the delimeter character, the quote characer, or
+can be used to escape the delimiter character, the quote character, or
 to add special characters like \code{\\n}.}
 
 \item{escape_double}{Does the file escape quotes by doubling them?

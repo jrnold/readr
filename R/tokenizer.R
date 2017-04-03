@@ -50,7 +50,7 @@ NULL
 #'   a single quote, `\"`.
 #' @param escape_backslash Does the file use backslashes to escape special
 #'   characters? This is more general than `escape_double` as backslashes
-#'   can be used to escape the delimeter character, the quote characer, or
+#'   can be used to escape the delimiter character, the quote character, or
 #'   to add special characters like `\\n`.
 tokenizer_delim <- function(delim, quote = '"', na = "NA", quoted_na = TRUE, comment = "",
                             trim_ws = TRUE,
@@ -73,12 +73,13 @@ tokenizer_delim <- function(delim, quote = '"', na = "NA", quoted_na = TRUE, com
 
 #' @export
 #' @rdname Tokenizers
-tokenizer_csv <- function(na = "NA", quoted_na = TRUE, comment = "", trim_ws = TRUE) {
+tokenizer_csv <- function(na = "NA", quoted_na = TRUE, quote = "\"",
+                          comment = "", trim_ws = TRUE) {
   tokenizer_delim(
     delim = ",",
-    quote = '"',
     na = na,
     quoted_na = quoted_na,
+    quote = quote,
     comment = comment,
     trim_ws = trim_ws,
     escape_double = TRUE,
@@ -88,12 +89,13 @@ tokenizer_csv <- function(na = "NA", quoted_na = TRUE, comment = "", trim_ws = T
 
 #' @export
 #' @rdname Tokenizers
-tokenizer_tsv <- function(na = "NA", quoted_na = TRUE, comment = "", trim_ws = TRUE) {
+tokenizer_tsv <- function(na = "NA", quoted_na = TRUE, quote = "\"",
+                          comment = "", trim_ws = TRUE) {
   tokenizer_delim(
     delim = "\t",
-    quote = '"',
     na = na,
     quoted_na = quoted_na,
+    quote = quote,
     comment = comment,
     trim_ws = trim_ws,
     escape_double = TRUE,
